@@ -2,5 +2,5 @@
 layout: home
 title: "home"
 ---
-# home
+# welcome
 this is the main page.
