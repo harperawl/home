@@ -1,4 +1,8 @@
+@font-face {
+	font-family: "LatinModernSans";
+	src: url("/assets/fonts/lmsans17-regular.otf") format("opentype");
+}
+
 body {
-	background-color: #ffffff;
-	color: #0A0A0A;
+	font-family: "LatinModernSans", sans;
 }
