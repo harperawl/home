@@ -8,8 +8,15 @@
         src: url("/assets/fonts/lmmono12-regular.otf") format("opentype");
 }
 
+header {
+	background-color: #201020;
+	color: #c8c8c8;
+}
+
 body {
 	font-family: "LatinModernSans", sans-serif;
+	background-color: #8040ac;
+	color: #9090ac;
 }
 
 code {
