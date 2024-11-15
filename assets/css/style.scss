@@ -1,3 +1,11 @@
+/* variables */
+
+$background-color: #7A2A7A;
+$text-color: #A1B53E;
+$accent-color: #A83A5B;
+$supplementary-color: #6BA73A;
+$off-white: #F8F0E3;
+
 /* fonts */
 
 @font-face {
@@ -13,26 +21,22 @@
 /* divs - organized sequentially */
 
 header {
-	background-color: #004346;
-	color: #f8f8e3;
+	background-color: $accent-color;
+	color: $off-white;
 	width: 100%;
 	padding: 0.5rem;
 }
 
 body {
 	font-family: "LatinModernSans", sans-serif;
-	background-color: #172a3a;
-	color: #74b3ce;
+	background-color: $primary-color;
+	color: $text-color;
 }
 
 /* elements - organized alphabetically */
 
 a {
-	color: #09bc8a;
-}
-
-a:visited {
-	color: #508991;
+	color: $supplementary-color;
 }
 
 code {
