@@ -4,5 +4,9 @@
 }
 
 body {
-	font-family: "LatinModernSans", sans;
+	font-family: "LatinModernSans", sans-serif;
+}
+
+.highlighter-rouge {
+	font-family: "LatinModernMono", monospace;
 }
