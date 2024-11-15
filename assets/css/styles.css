@@ -1,3 +1,5 @@
+/* fonts */
+
 @font-face {
 	font-family: "LatinModernSans";
 	src: url("/assets/fonts/lmsans12-regular.otf") format("opentype");
@@ -8,15 +10,27 @@
         src: url("/assets/fonts/lmmono12-regular.otf") format("opentype");
 }
 
+/* divs - organized sequentially */
+
 header {
-	background-color: #201020;
-	color: #c8c8c8;
+	background-color: #8fa998;
+	color: #f8f0e3;
 }
 
 body {
 	font-family: "LatinModernSans", sans-serif;
-	background-color: #482460;
-	color: #9090ac;
+	background-color: #4f345a;
+	color: #f8f0e3;
+}
+
+/* elements - organized alphabetically */
+
+a {
+	color: #c9f299;
+}
+
+a:visited {
+	color: #9cbfa7;
 }
 
 code {
