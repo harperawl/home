@@ -3,6 +3,11 @@
 	src: url("/assets/fonts/lmsans12-regular.otf") format("opentype");
 }
 
+@font-face {
+        font-family: "LatinModernMono";
+        src: url("/assets/fonts/lmmono12-regular.otf") format("opentype");
+}
+
 body {
 	font-family: "LatinModernSans", sans-serif;
 }
