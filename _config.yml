@@ -33,7 +33,8 @@ destination: docs
 
 sass:
   load_paths:
-    - assets/css
+    - _sass
+  style: compressed
 
 # Exclude from processing.
 # The following items will not be processed, by default.
