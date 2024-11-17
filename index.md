@@ -1,31 +1,10 @@
 ---
 layout: default
-title: "home"
+title: "Home"
 ---
-# welcome
-this is the main page.
+i'm harper wicker-lenseigne, a senior at ida b. wells-barnett high school in portland, oregon. this website is for information about me, what i've done, and things i'd like to talk about.
 
-#### code highlighting test
-```python
-import this
-
-def hello():
-	print("hello world")
-
-hello()
-```
-and inline `code` highlighting too.
-
-#### citing test
-im telling the truth[^1].
-
-#### formatting test
-*hi*
-**hello**
-> my fellow americans
-1. thing 1
-1. thing 2
-	1. thing 3?
-1. thing 4
----
-[^1]: proof: trust me bro
+some places to start
+- {% link Me.md %}
+- {% link ThisWebsite.md %}
+- 
