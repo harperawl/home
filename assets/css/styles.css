@@ -1,3 +1,14 @@
+/* fonts */
+@font-face {
+	font-family: "LatinModernSans";
+	src: url("/assets/fonts/lmsans12-regular.otf") format("opentype");
+}
+
+@font-face {
+        font-family: "LatinModernMono";
+        src: url("/assets/fonts/lmmono12-regular.otf") format("opentype");
+}
+
 /* variables */
 :root {
   --background-color: #492C1D;
