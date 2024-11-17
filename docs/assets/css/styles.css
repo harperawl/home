@@ -20,22 +20,23 @@
   --mono-font: "LatinModernMono", monospace;
 }
 
-/* sections - hierarchical */
+/* sections */
+body {
+  font-family: var(--primary-font);
+  font-size: 1vw;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  margin: 1rem 1rem 0 1rem;
+}
+
 header {
   background-color: var(--supplementary-color);
   color: var(--background-color);
+  width: 100wv;
   margin: 0;
   padding: 0.5rem;
-}
-
-body {
-  font-family: var(--primary-font);
-  background-color: var(--background-color);
-  color: var(--text-color);
-}
-
-main {
-	margin: 1rem 0 0 3rem;
+  left: 0;
+  top: 0;
 }
 
 /* elements - alphabetical */
