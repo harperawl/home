@@ -45,7 +45,6 @@ footer {
 }
 
 /* elements - alphabetical */
-
 a {
   color: var(--accent-color);
 }
@@ -63,4 +62,9 @@ h1, h2, h3, h4, h5, h6 {
 hr {
 	border-top: none;
 	border-bottom: 2px solid var(--supplementary-color);
+}
+
+/* ids */
+#share {
+  float: right;
 }
