@@ -66,6 +66,7 @@ hr {
 
 /* ids */
 #share {
-  margin-left: 0.2rem;
+  float: right;
+  width: 0.2rem;
   filter: invert(60%) sepia(47%) saturate(2538%) hue-rotate(325deg) brightness(97%) contrast(91%);
 }
