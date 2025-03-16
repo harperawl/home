@@ -1,4 +1,3 @@
-<hr>
 <div>
 	Last updated on <a id="last_updated"></a>
 </div>
@@ -12,12 +11,22 @@
             }
 
             const json = await response.json();
-            console.log(json);
             const lastUpdated = json[0].commit.author.date;
             const date = new Date(lastUpdated);
 
             const lastUpdatedElement = document.getElementById("last_updated");
-            lastUpdatedElement.textContent = date.toDateString();
+            const options = {  
+                month: "short",  
+                day: "2-digit",  
+                year: "numeric",  
+                hour: "2-digit",  
+                minute: "2-digit",  
+                timeZone: "America/Los_Angeles",  
+                timeZoneName: "short"  
+            };
+
+            const formattedDate = new Intl.DateTimeFormat("en-US", options).format(date).replace(",", "");
+            lastUpdatedElement.textContent = formattedDate;
             lastUpdatedElement.href = json[0].html_url;
         } catch (error) {
             console.error(error.message);
