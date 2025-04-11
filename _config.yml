@@ -29,6 +29,11 @@ url: "https://harperawl.net" # the base hostname & protocol for your site, e.g. 
 twitter_username: harperawl
 github_username:  harperawl
 
+collections:
+  pages:
+    output: true
+    permalink: /:name/
+
 destination: docs
 
 # Exclude from processing.
