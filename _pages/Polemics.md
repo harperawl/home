@@ -1,5 +1,4 @@
 ---
-layout: default
 title: Polemics
 ---
 ## What these are for
