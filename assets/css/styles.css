@@ -85,3 +85,15 @@ hr {
   width: 0.7rem;
   filter: invert(60%) sepia(47%) saturate(2538%) hue-rotate(325deg) brightness(97%) contrast(91%);
 }
+
+#popup {
+  background-color: var(--supplementary-color);
+  color: var(--off-white);
+  border-radius: 3px;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#popup.show {
+  opacity: 1;
+}

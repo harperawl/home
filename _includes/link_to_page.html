@@ -1,6 +1,18 @@
 <a href="#" onclick="copyURL()" id="share"><img src="/assets/images/link.svg" /></a>
+<div id="popup">
+    <p>copied!</p>
 <script>
     function copyURL() {
         navigator.clipboard.writeText("https://harperawl.net{{ page.url }}");
+        popupCopyMessage();
+    }
+
+    function popupCopyMessage() {
+        const popup = document.getElementById("popup");
+        popup.classList.add("show");
+
+        setTimeout(() => {
+            popup.classList.remove("show");
+        }, 2200);
     }
 </script>
