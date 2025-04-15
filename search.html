@@ -5,7 +5,7 @@ description: Special page for listing search results.
 tags: [website, special]
 ---
 
-<p>Pages containing to: <span id="query-name"></span></p>
+<p>Pages containing: <span id="query-name"></span></p>
 <div id="results"></div>
 
 <script>
@@ -52,7 +52,7 @@ tags: [website, special]
 
           entry.innerHTML = ` 
             - <a href="${p.url}">${p.title}</a>
-            <p>${snippet}</p>
+            <em><p>... ${snippet} ...</p></em>
             <p>Tags: ${p.tags.map(tag => `<a href="/tag.html?tag=${tag}">${tag}</a>`).join(", ")}</p>`;
           container.appendChild(entry);
         });
