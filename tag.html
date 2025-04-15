@@ -1,56 +1,39 @@
 ---
-layout: none
-title: "Tag Page"
-description: "A page that lists all pages with a specific tag."
+layout: default
+title: Tags
+description: Special page for listing all pages with a specific tag.
+tags: [website]
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>{{ site.title }}</title>
-	<link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}">
-</head>
-{% include header.html %}
-<body>
-	{% include last_updated.html %}
-	<br>
-	<h1>{{ page.title }}</h1> {% include link_to_page.html %}
-	<br>
-	This is a special page, used only for linking to pages that share the tag specified in the URL parameter (<code>?tag=[name]</code>).
-</body>
+<p>Pages tagged with: <span id="tag-name"></span></p>
+<div id="results"></div>
+
 <script>
-    const urlParams = new URLSearchParams(window.location.search);
-    const tag = urlParams.get('tag');
+  const urlParams = new URLSearchParams(window.location.search);
+  const tag = urlParams.get('tag');
 
-    const pages = [
-    {% for page in site.pages %}
-        {
-            title: "{{ page.title | escape }}",
-            url: "{{ page.url }}",
-            tags: {{ page.tags | jsonify }}
-        }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
-    ];
+  document.getElementById("tag-name").textContent = tag;
 
-    const matchingPages = pages.filter(p => p.tags && p.tags.includes(tag));
+  fetch("/assets/data/pages.json")
+    .then(response => response.json())
+    .then(pages => {
+      const matchingPages = pages.filter(p => p.tags && p.tags.includes(tag));
 
-    const resultContainer = document.createElement("div");
-    resultContainer.innerHTML = "<h2>Pages tagged with '" + tag + "':</h2>";
+      const resultContainer = document.getElementById("results");
 
-    if (matchingPages.length) {
-        const list = document.createElement("ul");
+      if (matchingPages.length) {
+        const container = document.createElement("div");
         matchingPages.forEach(p => {
-            const li = document.createElement("li");
-            li.innerHTML = `<a href="${p.url}">${p.title}</a>`;
-            list.appendChild(li);
+          const entry = document.createElement("div");
+          entry.classList.add("entry");
+          entry.innerHTML = ` 
+            - <a href="${p.url}">${p.title}</a>
+            <p>${p.description}</p>`;
+          container.appendChild(entry);
         });
-        resultContainer.appendChild(list);
-    } else {
-        resultContainer.innerHTML += "<p>No pages found with this tag.</p>";
-    }
-
-    document.body.appendChild(resultContainer);
+        resultContainer.appendChild(container);
+      } else {
+        resultContainer.innerHTML = "<p>No pages found with this tag.</p>";
+      }
+    });
 </script>
-<hr>
-{% include footer.html %}
-</html>

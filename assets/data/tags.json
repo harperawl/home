@@ -1,0 +1,16 @@
+---
+layout: none
+permalink: /assets/data/pages.json
+---
+
+[
+{% assign pages_with_tags = site.pages | where_exp: "p", "p.tags" %}
+{% for page in pages_with_tags %}
+  {
+    "title": {{ page.title | jsonify }},
+    "url": {{ page.url | jsonify }},
+    "description": {{ page.description | jsonify }},
+    "tags": {{ page.tags | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+]

@@ -107,3 +107,13 @@ hr {
 #taglist {
   font-size: 0.7vw;
 }
+
+.entry {
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.entry p {
+  margin-top: 0;
+  margin-left: 0.5rem;
+}
