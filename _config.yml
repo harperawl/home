@@ -17,3 +17,5 @@ defaults:
 
 include:
   - _pages
+
+image: "/assets/images/harper.jpg"
