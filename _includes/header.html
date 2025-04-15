@@ -2,5 +2,6 @@
     <nav>
 	    <a href="{{ '/' | relative_url }}">Home</a> | 
         <a href="{{ '/about' | relative_url }}">About</a>
+        <input type="text" id="search" placeholder="Search..." onkeydown="if (event.key == 'Enter'){window.location.href = '/search.html?query=' + this.value;}">
     </nav>
 </header>

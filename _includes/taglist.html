@@ -1,6 +1,6 @@
 <div id="taglist">
-    Tags on this page: 
+    Tags on this page:
     {% for tag in page.tags %}
-        <a href="/tag.html?tag={{ tag }}">{{ tag }}</a>
-    {% endfor %}
+      <a href="/tag.html?tag={{ tag }}">{{ tag }}</a>{% unless forloop.last %}, {% endunless %}
+    {% endfor %}    
 </div>

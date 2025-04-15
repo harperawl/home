@@ -2,7 +2,7 @@
 layout: default
 title: Tags
 description: Special page for listing all pages with a specific tag.
-tags: [website]
+tags: [website, special]
 ---
 
 <p>Pages tagged with: <span id="tag-name"></span></p>
@@ -28,7 +28,8 @@ tags: [website]
           entry.classList.add("entry");
           entry.innerHTML = ` 
             - <a href="${p.url}">${p.title}</a>
-            <p>${p.description}</p>`;
+            <p>${p.description}</p>
+            <p>Tags: ${p.tags.map(tag => `<a href="/tag.html?tag=${tag}">${tag}</a>`).join(", ")}</p>`;
           container.appendChild(entry);
         });
         resultContainer.appendChild(container);

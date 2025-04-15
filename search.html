@@ -1,0 +1,64 @@
+---
+layout: default
+title: Search
+description: Special page for listing search results.
+tags: [website, special]
+---
+
+<p>Pages containing to: <span id="query-name"></span></p>
+<div id="results"></div>
+
+<script>
+  function search(query, data) {
+    const lowerQuery = query.toLowerCase();
+    return data.filter(item =>
+        item.title.toLowerCase().includes(lowerQuery) ||
+        item.description.toLowerCase().includes(lowerQuery) ||
+        item.tags.some(tag => tag.toLowerCase().includes(lowerQuery)) ||
+        item.content.toLowerCase().includes(lowerQuery)
+    );
+  }
+
+  const urlParams = new URLSearchParams(window.location.search);
+  const query = urlParams.get('query');
+
+  document.getElementById("query-name").textContent = query;
+
+  fetch("/assets/data/pages.json")
+    .then(response => response.json())
+    .then(pages => {
+      const matchingPages = search(query, pages);
+
+      const resultContainer = document.getElementById("results");
+
+      if (matchingPages.length) {
+        const container = document.createElement("div");
+        matchingPages.forEach(p => {
+          const entry = document.createElement("div");
+          entry.classList.add("entry");
+
+          const words = p.content.split(/\s+/);
+          const index = words.findIndex(w => w.toLowerCase().includes(query.toLowerCase()));
+          let snippet = "";
+          if (index !== -1) {
+            const start = Math.max(0, index - 10);
+            const end = Math.min(words.length, index + 11); // +11 to get 10 after including the word
+
+            const snippetWords = words.slice(start, end);
+            snippetWords[index - start] = `<strong>${snippetWords[index - start]}</strong>`;
+
+            snippet = snippetWords.join(" ");
+          }
+
+          entry.innerHTML = ` 
+            - <a href="${p.url}">${p.title}</a>
+            <p>${snippet}</p>
+            <p>Tags: ${p.tags.map(tag => `<a href="/tag.html?tag=${tag}">${tag}</a>`).join(", ")}</p>`;
+          container.appendChild(entry);
+        });
+        resultContainer.appendChild(container);
+      } else {
+        resultContainer.innerHTML = "<p>No matching pages found.</p>";
+      }
+    });
+</script>
