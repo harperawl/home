@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{{ site.title }}</title>
+	<link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}">
+</head>
+{% include header.html %}
+<body>
+	{% include last_updated.html %}
+	<br>
+	<h1>{{ page.title }}</h1> {% include link_to_page.html %}
+	<br>
+	This is a special page, used only for linking to pages that share the tag specified in the URL parameter (<code>?tag=[name]</code>).
+</body>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const tag = urlParams.get('tag');
+
+    const pages = [
+    {% for page in site.pages %}
+        {
+            title: "{{ page.title | escape }}",
+            url: "{{ page.url }}",
+            tags: {{ page.tags | jsonify }}
+        }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+    ];
+
+    const matchingPages = pages.filter(p => p.tags && p.tags.includes(tag));
+
+    const resultContainer = document.createElement("div");
+    resultContainer.innerHTML = "<h2>Pages tagged with '" + tag + "':</h2>";
+
+    if (matchingPages.length) {
+        const list = document.createElement("ul");
+        matchingPages.forEach(p => {
+            const li = document.createElement("li");
+            li.innerHTML = `<a href="${p.url}">${p.title}</a>`;
+            list.appendChild(li);
+        });
+        resultContainer.appendChild(list);
+    } else {
+        resultContainer.innerHTML += "<p>No pages found with this tag.</p>";
+    }
+
+    document.body.appendChild(resultContainer);
+</script>
+<hr>
+{% include footer.html %}
+</html>

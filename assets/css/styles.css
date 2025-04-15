@@ -103,3 +103,7 @@ hr {
 #popup.show {
   opacity: 1;
 }
+
+#taglist {
+  font-size: 0.5vw;
+}

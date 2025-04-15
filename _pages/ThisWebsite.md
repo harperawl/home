@@ -1,6 +1,7 @@
 ---
 title: ThisWebsite
 description: Information about this website, harperawl.net, and related pages.
+tags: [website]
 ---
 ## Software:
 I used the following softwares and services to create this website:
