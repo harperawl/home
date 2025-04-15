@@ -56,8 +56,15 @@ code {
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
   padding: 0;
-	border-bottom: 2px solid var(--supplementary-color);
   display: inline-block;
+}
+
+h1 {
+  border-bottom: 2px solid var(--supplementary-color);
+}
+
+h2, h3, h4, h5, h6 {
+  border-bottom: 1px solid var(--supplementary-color);
 }
 
 hr {

@@ -3,7 +3,7 @@ title: ThisWebsite
 description: Information about this website, harperawl.net, and related pages.
 ---
 ## Software:
-I used the following softwares and services to create this webste:
+I used the following softwares and services to create this website:
 - Jekyll, to generate the static site
 - Git, to manage version control
 - Git Bash, to interact with Git and use as a terminal
