@@ -87,6 +87,12 @@ hr {
 }
 
 #popup {
+	display: inline-block;
+  margin-left: 0.7rem;
+  padding-left: 0.3rem;
+	padding-right: 0.3rem;
+	line-height: 0.1vw;
+	vertical-align: middle;
   background-color: var(--supplementary-color);
   color: var(--off-white);
   border-radius: 3px;
