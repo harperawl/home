@@ -23,7 +23,7 @@
 /* sections */
 body {
   font-family: var(--primary-font);
-  font-size: 1vw;
+  font-size: 1rem;
   background-color: var(--background-color);
   color: var(--text-color);
   margin: 1rem 1rem 0 1rem;
@@ -105,7 +105,7 @@ hr {
 }
 
 #taglist {
-  font-size: 0.7vw;
+  font-size: 0.5rem;
 }
 
 #search {
