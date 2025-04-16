@@ -1,19 +1,26 @@
-<a href="#" onclick="copyURL()" id="share"><img src="/assets/images/link.svg" /></a>
-<div id="popup">
-    <p>copied!</p>
-</div>
 <script>
-    function copyURL() {
-        navigator.clipboard.writeText("https://harperawl.net{{ page.url }}");
-        popupCopyMessage();
-    }
+    document.addEventListener("DOMContentLoaded", function () {
+      const headers = document.querySelectorAll("h1, h2, h3, h4, h5, h6");
+      headers.forEach(header => {
+        const div = document.createElement("div");
+        div.className = "popup";
+        div.innerHTML = "copied!";
 
-    function popupCopyMessage() {
-        const popup = document.getElementById("popup");
-        popup.classList.add("show");
+        const link = document.createElement("a");
+        link.onclick = function() { navigator.clipboard.writeText(`https://harperawl.net/{{ page.title }}${header.id ? "#" : ""}${header.id}`); popupCopyMessage(div); }
+        link.className = "share";
+        link.innerHTML = "<img src='/assets/images/link.svg' />"
+        header.appendChild(link);
+
+        header.appendChild(div);
+      });
+    });
+
+    function popupCopyMessage(link) {
+        link.classList.add("show");
 
         setTimeout(() => {
-            popup.classList.remove("show");
+            link.classList.remove("show");
         }, 2200);
     }
 </script>
