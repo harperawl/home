@@ -1,0 +1,56 @@
+<div id="link-preview">
+    
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const preview = document.getElementById("link-preview");
+      let showTimeout = null;
+    
+      document.querySelectorAll("a[href]").forEach(link => {
+        const href = link.getAttribute("href");
+        let isLocal = true;
+    
+        if (href.startsWith("http") || href.startsWith("/")) {
+          isLocal = false;
+        }
+    
+        if (isLocal) {
+          link.addEventListener("mouseenter", (e) => {
+            showTimeout = setTimeout(() => {
+                let desc = "";
+                fetch('/assets/data/pages.json')
+                    .then(response => response.json())
+                    .then(data => {
+                        desc = data.find(p => p.title === href)?.description;
+                        preview.innerHTML = `
+                        <h3>${href}</h3>
+                        <p>${desc}</p>
+                        `;
+                    });
+                const rect = link.getBoundingClientRect();
+                const offsetX = 10;
+                const offsetY = 5;
+                preview.style.left = `${rect.right + offsetX + window.scrollX}px`;
+                preview.style.top = `${rect.top + offsetY + window.scrollY}px`;
+                preview.style.display = "block";
+
+                void preview.offsetWidth;
+                preview.style.opacity = "0.7";
+            }, 200);
+          });
+    
+          link.addEventListener("mouseleave", () => {
+            clearTimeout(showTimeout);
+            preview.style.opacity = "0";
+
+            setTimeout(() => {
+              if (preview.style.opacity === "0") {
+                preview.style.display = "none";
+              }
+            }, 200);
+          });
+        }
+      });
+    });
+</script>    

@@ -88,6 +88,33 @@ hr {
   float: right;
 }
 
+#link-preview {
+  position: absolute;
+  display: none;
+  padding: 8px;
+  background-color: var(--supplementary-color);
+  color: var(--off-white);
+  border-radius: 4px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.6);
+  font-size: 1rem;
+  width: 15rem;
+  z-index: 999;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+#link-preview > h3 {
+  margin: 0;
+  padding: 0;
+  font-weight: 700;
+  border-bottom: 1px solid var(--off-white);
+}
+
+#link-preview > p {
+  margin: 0;
+  padding: 0;
+}
+
 /* classes */
 .entry {
   margin-left: 1.5rem;
