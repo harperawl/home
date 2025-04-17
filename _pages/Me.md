@@ -2,6 +2,7 @@
 title: Me
 description: Information about myself, Harper Wicker-Lenseigne.
 tags: [biographical]
+image: "assets/images/harper.jpg"
 ---
 This page focuses on biographical information about myself.
 ## Basics
