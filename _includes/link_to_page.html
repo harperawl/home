@@ -7,7 +7,8 @@
         div.innerHTML = "copied!";
 
         const link = document.createElement("a");
-        link.onclick = function() { navigator.clipboard.writeText(`https://harperawl.net/{{ page.title }}${header.id ? "#" : ""}${header.id}`); popupCopyMessage(div); }
+        link.onclick = function() { navigator.clipboard.writeText(`https://harperawl.net/{{ page.title }}{% if page.tags contains "special" %}.html{% else %}{% endif %}
+${header.id ? "#" : ""}${header.id}`); popupCopyMessage(div); }
         link.className = "share";
         link.innerHTML = "<img src='/assets/images/link.svg' />"
         header.appendChild(link);
