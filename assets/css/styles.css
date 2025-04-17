@@ -150,6 +150,19 @@ p {
   margin: 0;
 }
 
+#graph {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  height: 70%;
+  margin: 0 auto;
+  margin-top: 1rem;
+  border: 5px solid var(--supplementary-color);
+  border-radius: 4px;
+  padding: 1rem;
+}
+
 /* classes */
 .entry {
   margin-left: 1.5rem;
