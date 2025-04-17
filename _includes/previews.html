@@ -1,6 +1,4 @@
-<div id="link-preview">
-    
-</div>
+<div id="link-preview"></div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
@@ -13,6 +11,13 @@
     
         if (href.startsWith("http") || href.startsWith("/")) {
           isLocal = false;
+          if (href.startsWith("http")) {
+            link.target = "_blank";
+            const outboundIcon = document.createElement("img");
+            outboundIcon.src = "/assets/images/external-link.svg";
+            outboundIcon.classList.add("outbound-icon");
+            link.appendChild(outboundIcon);
+          }
         }
     
         if (isLocal) {

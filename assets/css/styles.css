@@ -135,6 +135,14 @@ hr {
   filter: invert(60%) sepia(47%) saturate(2538%) hue-rotate(325deg) brightness(97%) contrast(91%);
 }
 
+.outbound-icon {
+  display: inline-block;
+  vertical-align: middle;
+  width: 1rem;
+  margin-left: 0.1rem;
+  filter: invert(60%) sepia(47%) saturate(2538%) hue-rotate(325deg) brightness(97%) contrast(91%);
+}
+
 .popup {
 	display: inline-block;
   margin-left: 1rem;
