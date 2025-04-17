@@ -9,7 +9,7 @@
         const href = link.getAttribute("href");
         let isLocal = true;
     
-        if (href.startsWith("http") || href.startsWith("/")) {
+        if (href.startsWith("http") || href.startsWith("/") || href.startsWith("#")) {
           isLocal = false;
           if (href.startsWith("http")) {
             link.target = "_blank";

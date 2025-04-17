@@ -37,6 +37,7 @@ header {
   padding: 0.5rem;
   left: 0;
   top: 0;
+  border-radius: 4px;
 }
 
 footer {
@@ -57,7 +58,8 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-block;
   border-bottom: 1px solid var(--supplementary-color);
   line-height: 1;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0.1rem;
   padding: 0;
   width: 100%;
 }
@@ -71,12 +73,40 @@ h2 {
 }
 
 h3 {
-  font-weight: 500;
+  font-weight: 550;
 }
 
 hr {
 	border-top: none;
 	border-bottom: 2px solid var(--supplementary-color);
+}
+
+figure {
+  float: right;
+  margin: 1em;
+  max-width: 10rem;
+  text-align: center;
+  border: 3px solid black;
+}
+
+figure img {
+  display: block;
+  margin: 0;
+  max-width: 10rem;
+  height: auto;
+}
+
+figcaption {
+  margin: 0;
+  font-size: 0.9em;
+  color: var(--off-white);
+  background: var(--supplementary-color);
+  opacity: 0.8;
+}
+
+p {
+  margin-top: 0.3rem;
+  margin-bottom: 0.3rem;
 }
 
 /* ids */
