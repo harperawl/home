@@ -24,3 +24,6 @@ I used the following softwares and services to create this website:
 - Vim, to edit markdown and layout files in
 
 The layout of this website was heavily influenced by [issarice.com](http://issarice.com) and partially influenced by [WikiWikiWeb](https://wiki.c2.com).
+
+## Sitemap
+You can view the sitemap [here](/sitemap.html).

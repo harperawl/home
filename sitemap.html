@@ -1,6 +1,7 @@
 ---
 layout: default
-title: Site Graph
+title: Sitemap
+tags: [website, special]
 ---
 This is a special page for visualizing the site graph.
 
@@ -47,17 +48,20 @@ fetch('/assets/data/pages.json')
         .data(nodes)
         .join("circle")
         .attr("r", 8)
-        .attr("fill", "#69b3a2")
+        .attr("fill", "var(--accent-color)")
         .call(drag(simulation));
 
-    const label = svg.append("g")
-        .selectAll("text")
-        .data(nodes)
-        .join("text")
-        .text(d => d.title)
-        .attr("font-size", 10)
-        .attr("dx", 12)
-        .attr("dy", ".35em");
+        const label = svg.append("g")
+            .selectAll("a")
+            .data(nodes)
+            .join("a")
+            .attr("xlink:href", d => d.id)
+            .append("text")
+            .attr("class", "node-label")
+            .text(d => d.title)
+            .attr("font-size", 12)
+            .attr("dx", 14)
+            .attr("dy", "0.35em");
         simulation.on("tick", () => {
             link
                 .attr("x1", d => clamp(d.source.x, 0, width * .95))
