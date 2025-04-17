@@ -31,7 +31,7 @@ I attended Jackson Middle School for grades 6-8.
 ### High school
 *Main article: [IdaBWellsBarnettHighSchool](IdaBWellsBarnettHighSchool)*
 
-I attend Ida B. Wells-Barnett High School currently; I am in my senior year.
+I currently attend Ida B. Wells-Barnett High School. I am in my senior year.
 
 ### College/university
 *Main article: [OregonStateUniversity](OregonStateUniversity)*

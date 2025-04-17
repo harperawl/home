@@ -1,0 +1,17 @@
+Dark theme: <input id="dark-theme-checkbox" name="dark-theme" onchange="changeTheme(this)" type="checkbox"></input>
+<script>
+    function changeTheme(checkbox) {
+        const root = document.documentElement;
+        if (checkbox.checked) {
+            root.style.setProperty('--background-color', '#454246');
+            root.style.setProperty('--text-color', '#F0E9DE');
+            root.style.setProperty('--accent-color', '#EC7255');
+            root.style.setProperty('--supplementary-color', '#b84a2e');
+        } else {
+            root.style.setProperty('--background-color', '#F0E9DE');
+            root.style.setProperty('--text-color', '#454246');
+            root.style.setProperty('--accent-color', '#EC7255');
+            root.style.setProperty('--supplementary-color', '#994B37');
+        }
+    }
+</script>

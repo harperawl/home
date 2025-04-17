@@ -31,7 +31,7 @@ body {
 
 header {
   background-color: var(--supplementary-color);
-  color: var(--background-color);
+  color: var(--off-white);
   width: 100wv;
   margin: 0;
   padding: 0.5rem;
@@ -143,6 +143,11 @@ p {
 #link-preview > p {
   margin: 0;
   padding: 0;
+}
+
+#dark-theme-checkbox {
+  vertical-align: middle;
+  margin: 0;
 }
 
 /* classes */

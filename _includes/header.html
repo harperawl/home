@@ -1,7 +1,8 @@
 <header>
     <nav>
 	    <a href="{{ '/' | relative_url }}">Home</a> | 
-        <a href="{{ '/about' | relative_url }}">About</a>
+        <a href="{{ '/about' | relative_url }}">About</a> |
+        {% include dark_theme.html %}
         <input type="text" id="search" placeholder="Search..." onkeydown="if (event.key == 'Enter'){window.location.href = '/search.html?query=' + this.value;}">
     </nav>
 </header>
