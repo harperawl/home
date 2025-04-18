@@ -4,7 +4,7 @@ title: Tags
 description: Special page for listing all pages with a specific tag.
 tags: [website, special]
 ---
-
+<a href="/tag.html">View all tags</a>
 <p>Pages tagged with: <span id="tag-name"></span></p>
 <div id="results"></div>
 
@@ -13,28 +13,55 @@ tags: [website, special]
   const tag = urlParams.get('tag');
 
   document.getElementById("tag-name").textContent = tag;
-
-  fetch("/assets/data/pages.json")
-    .then(response => response.json())
-    .then(pages => {
-      const matchingPages = pages.filter(p => p.tags && p.tags.includes(tag));
+  if (!tag) {
+    fetch("/assets/data/pages.json")
+      .then(response => response.json())
+      .then(pages => {
+      const allTags = new Set();
+      pages.forEach(p => {
+        if (p.tags) {
+        p.tags.forEach(tag => allTags.add(tag));
+        }
+      });
 
       const resultContainer = document.getElementById("results");
-
-      if (matchingPages.length) {
-        const container = document.createElement("div");
-        matchingPages.forEach(p => {
+      if (allTags.size) {
+        const tagList = Array.from(allTags);
+        tagList.forEach(tag => {
           const entry = document.createElement("div");
           entry.classList.add("entry");
-          entry.innerHTML = ` 
-            - <a href="${p.url}">${p.title}</a>
-            <p>${p.description}</p>
-            <p>Tags: ${p.tags.map(tag => `<a href="/tag.html?tag=${tag}">${tag}</a>`).join(", ")}</p>`;
-          container.appendChild(entry);
+            const count = pages.filter(p => p.tags && p.tags.includes(tag)).length;
+            entry.innerHTML = 
+            `- <a href="/tag.html?tag=${tag}">${tag}</a> (${count} page${count > 1 ? 's' : ''})`;
+          resultContainer.appendChild(entry);
         });
-        resultContainer.appendChild(container);
       } else {
-        resultContainer.innerHTML = "<p>No pages found with this tag.</p>";
+        resultContainer.innerHTML = "<p>No tags available.</p>";
       }
-    });
+      });
+  } else {
+    fetch("/assets/data/pages.json")
+      .then(response => response.json())
+      .then(pages => {
+        const matchingPages = pages.filter(p => p.tags && p.tags.includes(tag));
+
+        const resultContainer = document.getElementById("results");
+
+        if (matchingPages.length) {
+          const container = document.createElement("div");
+          matchingPages.forEach(p => {
+            const entry = document.createElement("div");
+            entry.classList.add("entry");
+            entry.innerHTML = ` 
+              - <a href="${p.url}">${p.title}</a>
+              <p>${p.description}</p>
+              <p>Tags: ${p.tags.map(tag => `<a href="/tag.html?tag=${tag}">${tag}</a>`).join(", ")}</p>`;
+            container.appendChild(entry);
+          });
+          resultContainer.appendChild(container);
+        } else {
+          resultContainer.innerHTML = "<p>No pages found with this tag.</p>";
+        }
+      });
+  }
 </script>
