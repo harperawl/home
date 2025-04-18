@@ -16,7 +16,7 @@ This page focuses on biographical information about myself.
 - Birthplace: Portland, Oregon (OHSU Hospital)
 - Residence: Portland, Oregon (Multnomah County)
 - Age: 16
-- Height: ~6'2" (~185cm)
+- Height: ≈6'2" (≈185cm)
 
 ### Hyphen
 Legally, my name does not contain a hyphen -- or does it? I have several birth certificates with conflicting information. Currently, my government identification (passport, driver's license) does not contain a hyphen; however, I prefer to style my name with a hyphen in daily life.
@@ -37,6 +37,6 @@ I currently attend Ida B. Wells-Barnett High School. I am in my senior year.
 ### College/university
 *Main article: [OregonStateUniversity](OregonStateUniversity)*
 
-While in high school, I took one class at Portland Community College: MTH 261, Applied Linear Algebra I, with instructor Matthew Funk. I have also received a few credits from Dual Credit high school courses (namely, AP Micro/Macroeconomics and Intro to Health Occupations).
+While in high school, I took one class at Portland Community College: MTH 261: Applied Linear Algebra I with instructor Matthew Funk. I have also received a few credits from Dual Credit high school courses (namely, AP Micro/Macroeconomics and Intro to Health Occupations).
 
 I will attend Oregon State University in the fall of 2025 as a first-year freshman in the Electrical and Computer Engineering major program.

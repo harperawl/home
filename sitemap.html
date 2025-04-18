@@ -26,10 +26,19 @@ fetch('/assets/data/pages.json')
       });
     });
 
-    const width = 800, height = 600;
+    const container = document.getElementById("graph");
+    const width = container.clientWidth;
+    const height = 600;
+
     const svg = d3.select("#graph").append("svg")
         .attr("width", width)
         .attr("height", height);
+      
+    window.addEventListener("resize", () => {
+      const newWidth = container.clientWidth;
+      simulation.force("center", d3.forceCenter(newWidth * 0.7 / 2, height / 2));
+      simulation.alpha(1).restart(); // reheat the simulation
+    });
 
     const simulation = d3.forceSimulation(nodes)
         .force("link", d3.forceLink(links).id(d => d.id).distance(100))
